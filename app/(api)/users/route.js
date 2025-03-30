@@ -3,9 +3,9 @@ import { eq } from "drizzle-orm";
 import db from "../../index";
 import { usersTable } from "../../db/schema";
 
-export async function POST(req) {
+export async function POST(request) {
   try {
-    const { user } = await req.json();
+    const { user } = await request.json();
 
     if (!user?.primaryEmailAddress?.emailAddress) {
       return new NextResponse("Email is required", { status: 400 });
