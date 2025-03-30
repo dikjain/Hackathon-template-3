@@ -26,7 +26,7 @@ export default function Home() {
   });
 
   const CheckIsNewUser = async() => {
-    await axios.post('/(api)/users', { user });
+    await axios.post('/users', { user });
   }
 
   useEffect(() => {
