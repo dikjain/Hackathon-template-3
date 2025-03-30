@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Hackathon - template", 
+  title: "ProjectX", 
   description: "never setup db, auth , etc ever again in hackathon",
 };
 
