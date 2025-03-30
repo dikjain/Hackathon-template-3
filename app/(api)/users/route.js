@@ -7,8 +7,8 @@ export async function POST(request) {
   try {
     const { user } = await request.json();
 
-    if (!user?.primaryEmailAddress?.emailAddress) {
-      return new NextResponse("Email is required", { status: 400 });
+    if (!user?.primaryEmailAddress?.emailAddress || !user?.fullName) {
+      return new NextResponse("Email and name are required", { status: 400 });
     }
 
     const userData = await db.select().from(usersTable).where(

@@ -1,4 +1,4 @@
-import { Zap, Github, Home, Sparkles, PlayCircle, Users, Moon, Sun } from 'lucide-react';
+import { Zap, Github, Home, Moon, Sun, LayoutDashboard, MessageSquare } from 'lucide-react';
 import { useTheme } from '@/app/utils/Context';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -12,11 +12,10 @@ export const Navbar = () => {
 
   const neoBrutalismBoxShadow = "4px 4px 0px 0px rgba(0,0,0,0.9)";
   const neoBrutalismBorder = "2px solid #000";
-
   const navLinks = [
     { href: "/", label: "Home", icon: <Home className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
-    { href: "/dashboard", label: "Dashboard", icon: <Home className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
-    { href: "/chatbot", label: "Chatbot", icon: <Home className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
+    { href: "/dashboard", label: "Dashboard", icon: <LayoutDashboard className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
+    { href: "/chatbot", label: "Chatbot", icon: <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
     // { href: "#team", label: "Team", icon: <Users className="h-5 w-5 md:hidden" /> },
     { 
       href: "https://github.com/dikjain/Hackathon-template-3", 

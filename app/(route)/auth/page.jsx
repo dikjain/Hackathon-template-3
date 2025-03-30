@@ -90,7 +90,7 @@ export default function AuthPage() {
             </div>
             
             <motion.div 
-              className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6"
+              className="mt-12 grid max-[500px]:hidden grid-cols-1 md:grid-cols-2 gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
