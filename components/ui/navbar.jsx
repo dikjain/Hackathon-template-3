@@ -16,9 +16,10 @@ export const Navbar = () => {
   const navLinks = [
     { href: "/", label: "Home", icon: <Home className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
     { href: "/dashboard", label: "Dashboard", icon: <Home className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
+    { href: "/chatbot", label: "Chatbot", icon: <Home className="h-4 w-4 sm:h-5 sm:w-5 md:hidden" /> },
     // { href: "#team", label: "Team", icon: <Users className="h-5 w-5 md:hidden" /> },
     { 
-      href: "https://github.com/dikjain/Hackathon-template-2", 
+      href: "https://github.com/dikjain/Hackathon-template-3", 
       label: "GitHub", 
       icon: <Github className="h-4 w-4 sm:h-5 sm:w-5" />,
       isExternal: true,

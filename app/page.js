@@ -11,11 +11,6 @@ import Link from 'next/link';
 
 const STAGGER_DELAY = 0.1;
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
 
 const neoBrutalismBoxShadow = "8px 8px 0px 0px rgba(0,0,0,0.9)";
 const neoBrutalismBorder = "3px solid #000";
@@ -100,7 +95,8 @@ export default function Home() {
                       style={{
                         fontFamily: "var(--font-space-grotesk)",
                         boxShadow: neoBrutalismBoxShadow,
-                        border: neoBrutalismBorder
+                        border: neoBrutalismBorder,
+                        cursor: 'pointer'
                       }}
                     >
                       Try Demo
@@ -115,11 +111,12 @@ export default function Home() {
                   <Link href="/dashboard">
                     <Button 
                       variant="outline" 
-                      className={`cursor-pointer text-lg px-8 py-6 font-bold rounded-lg ${theme === 'dark' ? 'bg-black text-[#00ffaa] border-[#00ffaa] hover:bg-[#111]' : 'bg-white text-black border-black hover:bg-[#f0f0f0]'}`} 
+                      className={`cursor-pointer text-lg px-8 py-6 font-bold rounded-lg ${theme === 'dark' ? 'bg-black text-[#00ffaa] border-[#00ffaa] hover:bg-[#111] hover:text-[#00ffaa] hover:text-2xl' : 'bg-white text-black border-black hover:bg-[#f0f0f0]'}`} 
                       style={{
                         fontFamily: "var(--font-space-grotesk)",
                         boxShadow: theme === 'dark' ? '6px 6px 0px 0px #00ffaa' : neoBrutalismBoxShadow,
-                        border: theme === 'dark' ? '3px solid #00ffaa' : neoBrutalismBorder
+                        border: theme === 'dark' ? '3px solid #00ffaa' : neoBrutalismBorder,
+                        cursor: 'pointer'
                       }}
                     >
                       Learn More
@@ -134,7 +131,13 @@ export default function Home() {
                 animate={{ y: [0, -12, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
               >
-                <ChevronDown className={`h-10 w-10 ${theme === 'dark' ? 'text-[#ff00ff]' : 'text-[#ff00aa]'}`} />
+                <ChevronDown 
+                  className={`h-10 w-10 rounded-full ${theme === 'dark' ? 'bg-[#222] text-[#ff00ff]' : 'bg-white text-black'}`}
+                  style={{
+                    boxShadow: theme === 'dark' ? '4px 4px 0px 0px #ff00ff' : '4px 4px 0px 0px rgba(0,0,0,0.9)',
+                    border: theme === 'dark' ? '2px solid #ff00ff' : '2px solid #000'
+                  }}
+                />
               </motion.div>
             </BlurFade>
           </div>
@@ -142,7 +145,7 @@ export default function Home() {
 
         <section 
           id="problem" 
-          className={`py-16 md:py-20 lg:py-28 rounded-xl ${theme === 'dark' ? 'bg-[#111]' : 'bg-white'} transform rotate-1`}
+          className={`py-16 md:py-20 lg:py-28 rounded-xl ${theme === 'dark' ? 'bg-[#111]' : 'bg-[#00ffaa]'} transform rotate-1`}
           style={{ 
             boxShadow: theme === 'dark' ? '12px 12px 0px 0px #ff00ff' : neoBrutalismBoxShadow,
             border: neoBrutalismBorder
@@ -194,7 +197,8 @@ export default function Home() {
                     style={{
                       fontFamily: "var(--font-space-grotesk)",
                       boxShadow: neoBrutalismBoxShadow,
-                      border: neoBrutalismBorder
+                      border: neoBrutalismBorder,
+                      cursor: 'pointer'
                     }}
                   >
                     Our Solution
@@ -484,6 +488,7 @@ export default function Home() {
                           rel="noreferrer"
                           className="flex items-center text-sm font-medium"
                           whileHover={{ scale: 1.2, rotate: 5 }}
+                          style={{ cursor: 'pointer' }}
                         >
                           <Linkedin className="h-6 w-6" />
                         </motion.a>
@@ -493,6 +498,7 @@ export default function Home() {
                           rel="noreferrer"
                           className="flex items-center text-sm font-medium"
                           whileHover={{ scale: 1.2, rotate: -5 }}
+                          style={{ cursor: 'pointer' }}
                         >
                           <Github className="h-6 w-6" />
                         </motion.a>
