@@ -3,20 +3,9 @@ import { eq } from "drizzle-orm";
 import db from "../../index";
 import { usersTable } from "../../db/schema";
 
-export async function POST(request) {
+export async function POST(req) {
   try {
-    if (!request.body) {
-      return new NextResponse("Request body is missing", { status: 400 });
-    }
-
-    let user;
-    try {
-      const body = await request.json();
-      user = body.user;
-    } catch (error) {
-      console.error("Error parsing request body:", error);
-      return new NextResponse("Invalid JSON in request body", { status: 400 });
-    }
+    const { user } = await req.json();
 
     if (!user?.primaryEmailAddress?.emailAddress) {
       return new NextResponse("Email is required", { status: 400 });
@@ -28,8 +17,8 @@ export async function POST(request) {
 
     if (userData.length <= 0) {
       const newUser = await db.insert(usersTable).values({
-        email: user.primaryEmailAddress.emailAddress,
-        name: user.fullName,
+        email: user?.primaryEmailAddress?.emailAddress,
+        name: user?.fullName,
         age: 0,
       }).returning();
 
