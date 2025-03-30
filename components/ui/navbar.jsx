@@ -97,7 +97,7 @@ export const Navbar = () => {
             >
               <button
                 onClick={toggleTheme}
-                className={`p-1 sm:p-2 rounded-md ${theme === 'dark' ? 'bg-[#222]' : 'bg-[#f0f0f0]'}`}
+                className={`p-1 sm:p-2 cursor-pointer rounded-md ${theme === 'dark' ? 'bg-[#222]' : 'bg-[#f0f0f0]'}`}
                 aria-label="Toggle theme"
                 style={{ 
                   boxShadow: theme === 'dark' ? '2px 2px 0px 0px #ff00ff' : '2px 2px 0px 0px #000',
